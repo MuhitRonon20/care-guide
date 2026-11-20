@@ -20,7 +20,8 @@ import { SpecializationBreakdownChart } from "@/components/dashboard/charts/spec
 import { RecentActivitySection } from "@/components/dashboard/recent-activity-section";
 import { MotionFade } from "@/components/shared/motion-wrapper";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ErrorState } from "@/components/shared/error-state";
 import { useAuth } from "@/providers/auth-provider";
 import {
@@ -100,19 +101,15 @@ export default function DashboardPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" asChild className="h-9 gap-1.5 text-xs">
-            <Link href="/doctors">
-              <Stethoscope className="h-3.5 w-3.5" />
-              Manage Doctors
-            </Link>
-          </Button>
+          <Link href="/doctors" className={cn(buttonVariants({ variant: "outline", size: "sm" }), "h-9 gap-1.5 text-xs")}>
+            <Stethoscope className="h-3.5 w-3.5" />
+            Manage Doctors
+          </Link>
 
-          <Button size="sm" asChild className="h-9 gap-1.5 text-xs shadow-sm">
-            <Link href="/patients">
-              <Plus className="h-3.5 w-3.5" />
-              Manage Patients
-            </Link>
-          </Button>
+          <Link href="/patients" className={cn(buttonVariants({ size: "sm" }), "h-9 gap-1.5 text-xs shadow-sm")}>
+            <Plus className="h-3.5 w-3.5" />
+            Manage Patients
+          </Link>
         </div>
       </div>
 

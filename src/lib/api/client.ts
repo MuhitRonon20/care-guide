@@ -2,9 +2,7 @@ export const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api";
 
 export const IS_MOCK_MODE =
-  process.env.NEXT_PUBLIC_USE_MOCK === "true" ||
-  process.env.NEXT_PUBLIC_USE_MOCK === undefined ||
-  !process.env.NEXT_PUBLIC_API_BASE_URL;
+  process.env.NEXT_PUBLIC_USE_MOCK === "true";
 
 // Helper to simulate realistic network latency in demo mode
 export async function simulateLatency(ms: number = 220): Promise<void> {

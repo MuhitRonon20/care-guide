@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Doctor } from "@/types";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { DoctorStatusBadge } from "@/components/shared/status-badge";
 import { formatDate } from "@/lib/utils";
 import {
@@ -32,17 +32,13 @@ export function DoctorProfileHeader({
     <div className="space-y-4">
       {/* Back button */}
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          asChild
-          className="text-slate-600 hover:text-slate-900 gap-1 text-xs"
+        <Link
+          href="/doctors"
+          className={`${buttonVariants({ variant: "ghost", size: "sm" })} text-slate-600 hover:text-slate-900 gap-1 text-xs`}
         >
-          <Link href="/doctors">
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Back to Doctors Directory
-          </Link>
-        </Button>
+          <ArrowLeft className="h-3.5 w-3.5" />
+          Back to Doctors Directory
+        </Link>
       </div>
 
       {/* Profile Card */}

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Doctor, Patient } from "@/types";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { PatientStatusBadge } from "@/components/shared/status-badge";
 import { formatDate } from "@/lib/utils";
 import { ArrowUpRight, Stethoscope, UserPlus } from "lucide-react";
@@ -30,12 +30,10 @@ export function RecentActivitySection({
               Recently assigned clinical cases
             </CardDescription>
           </div>
-          <Button variant="ghost" size="sm" asChild className="h-8 text-xs text-primary gap-1">
-            <Link href="/patients">
-              View All
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
-          </Button>
+          <Link href="/patients" className={`${buttonVariants({ variant: "ghost", size: "sm" })} h-8 text-xs text-primary gap-1`}>
+            View All
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </Link>
         </CardHeader>
         <CardContent className="pt-0">
           <div className="divide-y divide-slate-100">
@@ -74,12 +72,10 @@ export function RecentActivitySection({
               Healthcare providers on duty
             </CardDescription>
           </div>
-          <Button variant="ghost" size="sm" asChild className="h-8 text-xs text-primary gap-1">
-            <Link href="/doctors">
-              View All
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
-          </Button>
+          <Link href="/doctors" className={`${buttonVariants({ variant: "ghost", size: "sm" })} h-8 text-xs text-primary gap-1`}>
+            View All
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </Link>
         </CardHeader>
         <CardContent className="pt-0">
           <div className="divide-y divide-slate-100">
